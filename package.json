@@ -6,22 +6,33 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "eslint src --fix && yarn format",
+    "format": "prettier -w .",
+    "format:check": "prettier -c ."
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "clsx": "^2.0.0",
+    "next": "13.5.4",
     "react": "^18",
     "react-dom": "^18",
-    "next": "13.5.4"
+    "tailwind-merge": "^1.14.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@trivago/prettier-plugin-sort-imports": "^4.2.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@typescript-eslint/parser": "^6.7.5",
     "autoprefixer": "^10",
+    "eslint": "^8.51.0",
+    "eslint-config-next": "13.5.4",
+    "eslint-config-prettier": "^8.5.0",
     "postcss": "^8",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.5",
     "tailwindcss": "^3",
-    "eslint": "^8",
-    "eslint-config-next": "13.5.4"
+    "typescript": "^5.2.2"
   }
 }
