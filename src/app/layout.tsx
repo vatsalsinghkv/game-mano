@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils';
+import { Navbar } from '@/components/layouts';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
@@ -20,7 +20,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={cn(poppins.className, 'bg-bg-primary', 'text-text')}>
+      <body className={poppins.className}>
+        <Navbar />
         {children}
       </body>
     </html>

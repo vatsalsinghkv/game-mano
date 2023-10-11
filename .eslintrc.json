@@ -8,8 +8,10 @@
   ],
   "plugins": ["@typescript-eslint"],
   "rules": {
-    "no-unused-vars": "error",
+    "no-unused-vars": "warn",
     "no-console": "warn",
+    "react/display-name": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
     "react/jsx-curly-brace-presence": [
       "warn",
       {
