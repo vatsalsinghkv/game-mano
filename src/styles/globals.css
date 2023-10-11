@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Theme */
+    --color-bg: #380d41;
+    --color-bg-secondary: #fff;
+    --color-primary: #f903aa;
+    --color-secondary: #e2e53c;
+    --color-text: #f2f2f2;
+    --color-dark: #000;
+    --color-light: #fff;
+    --color-dark-1: #e4e4e4;
+    --color-dark-2: #d9d9d9;
+    --color-dark-3: #d4c9c9;
+    --color-grad-secondary: #a8620a, #e09519, #ffe581, #fcdc75, #f6c755, #eca522,
+      #e8980f, #feb838;
+    --color-grad-primary: #920aa8, #e019cc, #ff81e3, #fc75d6, #df55f6, #e822ec,
+      #e80f91, #ed19d8, #fe3873;
+  }
+
+  @font-face {
+    font-family: 'bespak';
+    src: url('/fonts/Bespax.otf') format('opentype');
+  }
+
+  @font-face {
+    font-family: 'routhem';
+    src: url('/fonts/Routhem.otf') format('opentype');
+  }
+}
+
+/* TYPOGRAPHY */
+.heading-primary {
+  @apply text-accent-primary text-center text-6xl font-normal capitalize leading-[129px];
+  text-shadow:
+    8px 22px 4px rgba(0, 0, 0, 0.25),
+    0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: routhem;
+  /* 215% */
+}
+.heading-secondary {
+  @apply text-dark-invert text-4xl font-normal capitalize not-italic;
+  font-family: bespak;
+}
+
+.text-gradient {
+  @apply bg-gradient-secondary inline-block bg-clip-text font-bold text-transparent;
+}
