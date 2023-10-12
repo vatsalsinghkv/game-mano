@@ -22,7 +22,7 @@ const Footer = () => {
         >
           {/* Go to top button */}
           <UnstyledLink
-            href='#hero'
+            href='#header'
             className={cn(
               'w-16 md:w-24',
               'absolute top-5 right-5',

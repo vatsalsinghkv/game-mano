@@ -23,7 +23,10 @@ const Navbar = () => {
   const route = pathname.split('/')[1] || 'home';
 
   return (
-    <header className='layout py-5 flex items-center justify-between'>
+    <header
+      id='header'
+      className='layout py-5 flex items-center justify-between'
+    >
       <Logo />
       <nav className='flex items-center gap-6'>
         {links.map(({ href, name }) => (

@@ -32,7 +32,7 @@ const Product = ({ id, category, title, images }: Props) => {
       <Button
         as='link'
         className='text-dark-base mt-5'
-        href={`/product/${id}`}
+        href={`/products/${id}`}
         variant='solid'
         fullWidth
       >
