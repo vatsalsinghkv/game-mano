@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
 export default async function Pricing({ params }: { params: { id: string } }) {
-  const res = await axios(request.products(params.id));
+  const res = await axios.get(request.products(params.id));
   const product: ProductType = res.data;
 
   if (!product) {

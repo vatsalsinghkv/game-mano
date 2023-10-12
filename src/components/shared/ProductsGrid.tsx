@@ -6,7 +6,7 @@ const ProductsGrid = ({ children, className }: Props) => {
   return (
     <div
       className={cn(
-        'grid grid-cols-fluid gap-14 md:gap-20 md:gap-y-24',
+        'grid grid-cols-fluid-sm sm:grid-cols-fluid gap-14 md:gap-20 md:gap-y-24',
         className,
       )}
     >

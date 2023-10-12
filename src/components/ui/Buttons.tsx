@@ -7,7 +7,7 @@ import { UnstyledLink } from '.';
 import { UnstyledLinkProps } from './links/UnstyledLink';
 
 interface DefaultProps {
-  variant?: 'outline' | 'solid' | 'mini';
+  variant?: 'outline' | 'solid' | 'mini' | 'light';
   size?: 'sm' | 'lg';
   center?: boolean;
   fullWidth?: boolean;
@@ -38,8 +38,9 @@ const Button = ({
     variant === 'mini' &&
       'bg-gradient-primary relative rounded-full p-[1px] h-7',
     variant === 'outline' && 'button-gradient',
+    variant === 'light' && 'button-gradient-light',
     variant === 'solid' &&
-      'bg-gradient-primary h-20 flex items-center justify-center px-4 text-dark-base text-2xl font-bespak',
+      'bg-gradient-primary hover:bg-gradient-secondary h-16 md:h-20 flex items-center justify-center px-4 text-dark-base text-2xl font-bespak',
     fullWidth && 'w-full',
     className,
   );
@@ -49,8 +50,8 @@ const Button = ({
       <span className='bg-bg-primary rounded-full h-full px-3 text-sm flex items-center justify-center'>
         <span className='text-gradient-primary'>{children}</span>
       </span>
-    ) : variant === 'outline' ? (
-      <>{children}</>
+    ) : variant === 'light' ? (
+      <span className='text-gradient-primary'>{children}</span>
     ) : (
       <>{children}</>
     );

@@ -1,4 +1,5 @@
 import { Footer, Navbar } from '@/components/layouts';
+import Provider from '@/components/shared/Provider';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
@@ -21,9 +22,11 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={poppins.className}>
-        <Navbar />
-        {children}
-        <Footer />
+        <Provider>
+          <Navbar />
+          {children}
+          <Footer />
+        </Provider>
       </body>
     </html>
   );

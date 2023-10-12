@@ -37,6 +37,7 @@ const config: Config = {
       },
       gridTemplateColumns: {
         fluid: 'repeat(auto-fill, minmax(300px, 1fr))',
+        'fluid-sm': 'repeat(auto-fill, minmax(250px, 1fr))',
       },
     },
   },

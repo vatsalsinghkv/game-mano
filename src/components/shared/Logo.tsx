@@ -18,7 +18,13 @@ const Logo = ({ className, href = '/', ...rest }: Props) => {
       )}
       {...rest}
     >
-      <Image src='/logo.png' alt='logo' height={50} width={100} />
+      <Image
+        src='/logo.png'
+        alt='logo'
+        className='w-20 md:w-[100px]'
+        height={50}
+        width={100}
+      />
     </UnstyledLink>
   );
 };

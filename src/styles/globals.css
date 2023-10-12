@@ -47,7 +47,7 @@
 
   .layout {
     max-width: 80rem;
-    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    @apply mx-auto px-5 sm:px-6 lg:px-8;
   }
 
   /* TYPOGRAPHY */
@@ -62,7 +62,7 @@
     @apply font-bespak text-xl uppercase tracking-[3.36px] text-dark-invert;
   }
   .heading-secondary {
-    @apply font-bespak text-4xl font-normal capitalize not-italic text-dark-invert;
+    @apply font-bespak text-2xl font-normal capitalize not-italic text-dark-invert md:text-4xl;
   }
 
   .heading-tertiary {
@@ -87,27 +87,13 @@
   @apply relative p-6 px-10 font-bespak text-lg uppercase hover:bg-gradient-primary hover:bg-clip-text hover:text-transparent;
 }
 
-.button-gradient::before {
+.button-gradient-light {
+  @apply relative bg-bg-secondary p-5 px-10 text-lg font-bold uppercase;
+}
+.button-gradient::before,
+.button-gradient-light::before {
   content: '';
   @apply absolute inset-0 rounded-full p-1;
-  background: linear-gradient(90deg, var(--color-grad-primary));
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-/* Border */
-
-.border-gradient {
-  @apply relative p-6 px-10 font-bespak text-lg uppercase hover:bg-gradient-primary hover:bg-clip-text hover:text-transparent;
-}
-
-.border-gradient::before {
-  content: '';
-  @apply absolute inset-0 p-2;
   background: linear-gradient(90deg, var(--color-grad-primary));
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
