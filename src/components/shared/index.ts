@@ -1,6 +1,6 @@
 import Hero from './Hero';
 import Logo from './Logo';
-import Product from './Product';
+import Product from './ProductCard';
 import ProductsGrid from './ProductsGrid';
 import StarRating from './StarRating';
 

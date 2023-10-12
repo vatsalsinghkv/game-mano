@@ -1,3 +1,4 @@
+import ProductSlider from './ProductSlider';
 import Products from './Products';
 
-export { Products };
+export { Products, ProductSlider };

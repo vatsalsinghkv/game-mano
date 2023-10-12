@@ -1,9 +1,27 @@
 import { Hero, StarRating } from '@/components/shared';
+import { Slider } from '@/components/ui';
 import request from '@/lib/request';
 import axios from '@/lib/services/axios';
 import { ProductType } from '@/lib/types/response';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+
+const config = {
+  desktop: {
+    breakpoint: { max: 3000, min: 900 },
+    items: 4,
+  },
+  laptop: { breakpoint: { max: 1200, min: 800 }, items: 3 },
+  tablet: {
+    breakpoint: { max: 800, min: 500 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 500, min: 0 },
+    items: 1,
+    partialVisibilityGutter: 100,
+  },
+};
 
 export default async function Pricing({ params }: { params: { id: string } }) {
   const res = await axios.get(request.products(params.id));
@@ -13,8 +31,15 @@ export default async function Pricing({ params }: { params: { id: string } }) {
     return <h1>not found</h1>;
   }
 
-  const { title, thumbnail, price, discountPercentage, description, rating } =
-    product;
+  const {
+    title,
+    thumbnail,
+    price,
+    discountPercentage,
+    description,
+    rating,
+    images,
+  } = product;
 
   return (
     <section className='pb-32'>
@@ -39,7 +64,7 @@ export default async function Pricing({ params }: { params: { id: string } }) {
           >
             <Image
               src={thumbnail}
-              alt='title'
+              alt={title}
               className='aspect-square h-full w-full object-contain relative z-10'
               height={200}
               width={200}
@@ -60,6 +85,28 @@ export default async function Pricing({ params }: { params: { id: string } }) {
             </div>
           </figcaption>
         </figure>
+
+        <Slider config={config}>
+          {images.map((img) => (
+            <div key={img} className='mx-5'>
+              <div
+                className={cn(
+                  'max-w-xs mx-auto w-full p-1',
+                  'bg-gradient-secondary relative',
+                  'before:absolute before:inset-1 before:bg-bg-secondary shadow-lg',
+                )}
+              >
+                <Image
+                  src={thumbnail}
+                  alt={title}
+                  className='aspect-square h-full w-full object-cover relative z-10'
+                  height={200}
+                  width={200}
+                />
+              </div>
+            </div>
+          ))}
+        </Slider>
       </main>
     </section>
   );

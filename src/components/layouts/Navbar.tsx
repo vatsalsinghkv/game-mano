@@ -12,7 +12,10 @@ const NavLink = ({ href, name, active }: LinkType & { active?: boolean }) => {
       {name}
     </Button>
   ) : (
-    <UnstyledLink href={href} className='capitalize text-dark-invert text-sm'>
+    <UnstyledLink
+      href={href}
+      className='capitalize text-dark-invert text-sm hover:text-accent-primary focus-visible:text-accent-primary'
+    >
       {name}
     </UnstyledLink>
   );

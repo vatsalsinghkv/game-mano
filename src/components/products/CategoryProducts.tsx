@@ -5,7 +5,8 @@ import useFetch from '@/lib/hooks/use-fetch';
 import request from '@/lib/request';
 import { ProductType, ProductsResponse } from '@/lib/types/response';
 
-import { Product, ProductsGrid } from '../shared';
+import { ProductsGrid } from '../shared';
+import ProductCard from '../shared/ProductCard';
 import { Loader } from '../ui';
 
 const CategoryProducts = () => {
@@ -26,7 +27,7 @@ const CategoryProducts = () => {
       {!loading && !error && data && (
         <ProductsGrid>
           {products.map((product) => (
-            <Product key={product.id} {...product} />
+            <ProductCard key={product.id} {...product} />
           ))}
         </ProductsGrid>
       )}
