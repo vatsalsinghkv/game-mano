@@ -4,7 +4,7 @@ type Props = {
 
 const SelectItem = ({ value }: Props) => {
   return (
-    <span className='p-5 py-1.5 hover:text-accent-primary cursor-pointer first:pt-3 last:pb-4 capitalize'>
+    <span className='p-5 py-2 hover:text-accent-primary cursor-pointer first:pt-3 last:pb-4 capitalize'>
       <input
         type='radio'
         className='hidden'
