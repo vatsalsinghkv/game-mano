@@ -49,11 +49,16 @@
 
   /* TYPOGRAPHY */
   .heading-primary {
-    @apply text-center text-6xl font-normal capitalize leading-[129px] text-accent-primary;
+    @apply text-center text-3xl font-normal capitalize text-accent-primary md:text-4xl lg:text-6xl;
     text-shadow:
       8px 22px 4px rgba(0, 0, 0, 0.25),
       0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: routhem;
+  }
+
+  .heading-primary--sub {
+    @apply text-xl uppercase tracking-[3.36px] text-dark-invert;
+    font-family: Bespak;
   }
   .heading-secondary {
     @apply text-4xl font-normal capitalize not-italic text-dark-invert;
@@ -77,4 +82,39 @@
   .text-gradient-secondary {
     @apply inline-block bg-gradient-secondary bg-clip-text font-bold text-transparent;
   }
+}
+
+/* COMPONENTS */
+.button-gradient {
+  @apply relative p-6 px-10 text-lg uppercase hover:bg-gradient-primary hover:bg-clip-text hover:text-transparent;
+  font-family: Bespak;
+}
+
+.button-gradient::before {
+  content: '';
+  @apply absolute inset-0 rounded-full p-1;
+  background: linear-gradient(90deg, var(--color-grad-primary));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.border-gradient {
+  @apply relative p-6 px-10 text-lg uppercase;
+  font-family: Bespak;
+}
+
+.border-gradient::before {
+  content: '';
+  @apply absolute inset-0 rounded-full p-1;
+  background: linear-gradient(90deg, var(--color-grad-primary));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }

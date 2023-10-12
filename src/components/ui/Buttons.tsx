@@ -7,7 +7,7 @@ import { UnstyledLink } from '.';
 import { UnstyledLinkProps } from './links/UnstyledLink';
 
 interface DefaultProps {
-  variant?: 'outline' | 'solid';
+  variant?: 'outline' | 'solid' | 'mini';
   size?: 'sm' | 'lg';
   center?: boolean;
 }
@@ -26,25 +26,36 @@ export type Props = ButtonProps | LinkProps;
 
 const Button = ({
   className = '',
-  variant,
+  variant = 'mini',
   size,
   children,
   ...props
 }: Props) => {
-  const classes = `capitalize bg-gradient-primary relative rounded-full p-[1px] h-7 ${className}`;
-
-  const child = (
-    <span className='bg-bg-primary rounded-full h-full px-3 text-sm flex items-center justify-center'>
-      <span className='text-gradient-primary'>{children}</span>
-    </span>
+  const classes = cn(
+    'capitalize',
+    variant === 'mini' &&
+      'bg-gradient-primary relative rounded-full p-[1px] h-7',
+    variant === 'outline' && 'button-gradient',
+    className,
   );
+
+  const child =
+    variant === 'mini' ? (
+      <span className='bg-bg-primary rounded-full h-full px-3 text-sm flex items-center justify-center'>
+        <span className='text-gradient-primary'>{children}</span>
+      </span>
+    ) : variant === 'outline' ? (
+      <>{children}</>
+    ) : (
+      <></>
+    );
 
   if (props.as === 'link') {
     // don't pass unnecessary props to component
     const { as, ...rest } = props;
 
     return (
-      <UnstyledLink className={cn(variant, classes, size)} {...rest}>
+      <UnstyledLink className={classes} {...rest}>
         {child}
       </UnstyledLink>
     );
@@ -53,7 +64,7 @@ const Button = ({
   const { as, ...rest } = props;
 
   return (
-    <button className={cn(variant, classes, size)} {...rest}>
+    <button className={classes} {...rest}>
       {child}
     </button>
   );
