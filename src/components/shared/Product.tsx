@@ -6,7 +6,7 @@ import { Button } from '../ui';
 
 interface Props extends ProductType {}
 
-const Product = ({ id, category, title, images }: Props) => {
+const Product = ({ id, category, title, thumbnail }: Props) => {
   return (
     <div className='bg-bg-secondary shadow-2xl rounded-[36.423px] p-6 text-dark-base group flex flex-col'>
       <header className='flex mb-2 items-center justify-between'>
@@ -17,8 +17,8 @@ const Product = ({ id, category, title, images }: Props) => {
       <main className='space-y-5 flex-grow overflow-hidden'>
         <div className='group-hover:scale-125 group-hover:translate-y-5 transition-all'>
           <Image
-            src={images[0]}
-            alt='title'
+            src={thumbnail}
+            alt={title}
             className='aspect-square h-full w-11/12 mx-auto max-w-md object-contain'
             height={90}
             width={300}

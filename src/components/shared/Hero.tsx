@@ -5,12 +5,20 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   subtitle?: string;
 }
 
-const Hero = ({ className, children, title, subtitle, ...props }: Props) => {
+const Hero = ({
+  className,
+  children,
+  title,
+  subtitle,
+
+  ...props
+}: Props) => {
   return (
     <section
       id='#hero'
       className={cn(
-        'min-h-[839px] bg-[url("/hero.jpeg")] bg-cover relative flex items-center justify-center',
+        `min-h-screen md:min-h-[839px] bg-[url("/hero.jpeg")] bg-cover`,
+        'relative flex items-center justify-center',
         className,
       )}
       {...props}
