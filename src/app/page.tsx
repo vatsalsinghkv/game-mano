@@ -1,3 +1,4 @@
+import { Products } from '@/components/home';
 import { Hero } from '@/components/shared';
 import { Button } from '@/components/ui';
 
@@ -9,6 +10,7 @@ export default function Home() {
           View All Products
         </Button>
       </Hero>
+      <Products />
     </>
   );
 }

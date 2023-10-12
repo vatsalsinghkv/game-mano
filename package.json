@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "axios": "^1.5.1",
     "clsx": "^2.0.0",
     "lucide-react": "^0.285.0",
     "next": "13.5.4",

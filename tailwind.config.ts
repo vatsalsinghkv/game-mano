@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        bespak: ['bespak', 'sans-serif'],
+        routhem: ['routhem', 'sans-serif'],
+      },
       colors: {
         text: 'var(--color-text)',
         bg: {

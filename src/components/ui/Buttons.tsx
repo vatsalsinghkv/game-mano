@@ -10,6 +10,7 @@ interface DefaultProps {
   variant?: 'outline' | 'solid' | 'mini';
   size?: 'sm' | 'lg';
   center?: boolean;
+  fullWidth?: boolean;
 }
 
 interface ButtonProps
@@ -28,14 +29,18 @@ const Button = ({
   className = '',
   variant = 'mini',
   size,
+  fullWidth,
   children,
   ...props
 }: Props) => {
   const classes = cn(
-    'capitalize',
+    'capitalize rounded-full',
     variant === 'mini' &&
       'bg-gradient-primary relative rounded-full p-[1px] h-7',
     variant === 'outline' && 'button-gradient',
+    variant === 'solid' &&
+      'bg-gradient-primary h-20 flex items-center justify-center px-4 text-dark-base text-2xl font-bespak',
+    fullWidth && 'w-full',
     className,
   );
 
@@ -47,7 +52,7 @@ const Button = ({
     ) : variant === 'outline' ? (
       <>{children}</>
     ) : (
-      <></>
+      <>{children}</>
     );
 
   if (props.as === 'link') {

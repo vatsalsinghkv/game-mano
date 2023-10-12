@@ -49,30 +49,25 @@
 
   /* TYPOGRAPHY */
   .heading-primary {
-    @apply text-center text-3xl font-normal capitalize text-accent-primary md:text-4xl lg:text-6xl;
+    @apply font-routhem text-center text-3xl font-normal capitalize text-accent-primary md:text-4xl lg:text-6xl;
     text-shadow:
       8px 22px 4px rgba(0, 0, 0, 0.25),
       0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: routhem;
   }
 
   .heading-primary--sub {
-    @apply text-xl uppercase tracking-[3.36px] text-dark-invert;
-    font-family: Bespak;
+    @apply font-bespak text-xl uppercase tracking-[3.36px] text-dark-invert;
   }
   .heading-secondary {
-    @apply text-4xl font-normal capitalize not-italic text-dark-invert;
-    font-family: bespak;
+    @apply font-bespak text-4xl font-normal capitalize not-italic text-dark-invert;
   }
 
   .heading-tertiary {
-    @apply inline-block text-2xl font-bold uppercase tracking-[2.5px] text-dark-invert;
-    font-family: routhem;
+    @apply font-routhem inline-block text-2xl font-bold uppercase tracking-[2.5px] text-dark-invert;
   }
 
   .heading-tertiary--gradient {
-    @apply inline-block bg-gradient-primary bg-clip-text text-2xl font-bold uppercase tracking-[2.5px] text-transparent;
-    font-family: routhem;
+    @apply font-routhem inline-block bg-gradient-primary bg-clip-text text-2xl font-bold uppercase tracking-[2.5px] text-transparent;
   }
 
   .text-gradient-primary {
@@ -86,28 +81,10 @@
 
 /* COMPONENTS */
 .button-gradient {
-  @apply relative p-6 px-10 text-lg uppercase hover:bg-gradient-primary hover:bg-clip-text hover:text-transparent;
-  font-family: Bespak;
+  @apply font-bespak relative p-6 px-10 text-lg uppercase hover:bg-gradient-primary hover:bg-clip-text hover:text-transparent;
 }
 
 .button-gradient::before {
-  content: '';
-  @apply absolute inset-0 rounded-full p-1;
-  background: linear-gradient(90deg, var(--color-grad-primary));
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-.border-gradient {
-  @apply relative p-6 px-10 text-lg uppercase;
-  font-family: Bespak;
-}
-
-.border-gradient::before {
   content: '';
   @apply absolute inset-0 rounded-full p-1;
   background: linear-gradient(90deg, var(--color-grad-primary));
