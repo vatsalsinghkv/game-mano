@@ -1,7 +1,9 @@
 import { IconLinkType, LinkType } from '@/lib/types';
+import { cn } from '@/lib/utils';
+import Image from 'next/image';
 import React from 'react';
 
-import FooterBg from '../images/FooterBG';
+import FooterBG from '../images/FooterBg';
 import { Logo } from '../shared';
 import { IconLink, UnstyledLink } from '../ui';
 
@@ -9,8 +11,35 @@ const Footer = () => {
   return (
     <>
       <footer className='relative overflow-x-hidden'>
-        <FooterBg className='absolute bottom-0 left-0 right-0 -z-10' />
-        <div className='min-h-[610px] pb-5 pt-32 grid layout text-center md:text-left grid-cols-2 gap-x-12 gap-y-5 place-items-center md:place-items-stretch lg:place-items-center lg:grid-cols-6'>
+        <FooterBG className='absolute bottom-0 left-0 right-0 -z-10' />
+        <div
+          className={cn(
+            'min-h-[610px] pb-5 pt-32',
+            'layout relative text-center md:text-left',
+            'grid grid-cols-2 gap-x-12 gap-y-5 place-items-center',
+            'md:place-items-stretch lg:place-items-center lg:grid-cols-6',
+          )}
+        >
+          {/* Go to top button */}
+          <UnstyledLink
+            href='#hero'
+            className={cn(
+              'w-16 md:w-24',
+              'absolute top-5 right-5',
+              'transition-all',
+              'hover:-translate-y-2 hover:shadow-xl',
+              'focus-visible::-translate-y-2 focus-visible::shadow-xl',
+            )}
+          >
+            <Image
+              src='/rocket.svg'
+              alt='go to top'
+              className='h-full w-full'
+              height={180}
+              width={100}
+            />
+          </UnstyledLink>
+
           <div className='space-y-5 col-span-2 md:col-span-3 lg:col-span-2'>
             <Logo className='mx-auto md:mx-0' />
             <p>
@@ -56,7 +85,7 @@ const Footer = () => {
         </div>
       </footer>
       {/* Attribute */}
-      <div className='text-center uppercase text-sm'>
+      <div className='text-center uppercase text-xs md:text-sm'>
         <p className='layout py-10 tracking-[1.87px]'>
           Copyright {new Date().getFullYear()}{' '}
           <UnstyledLink
