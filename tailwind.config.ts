@@ -31,6 +31,9 @@ const config: Config = {
         'gradient-secondary':
           'linear-gradient(90deg, var(--color-grad-secondary))',
       },
+      gridTemplateColumns: {
+        fluid: 'repeat(auto-fill, minmax(300px, 1fr))',
+      },
     },
   },
   plugins: [],

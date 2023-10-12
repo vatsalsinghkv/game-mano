@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
-import UnstyledLink, { UnstyledLinkProps } from '../ui/UnstyledLink';
+import UnstyledLink, { UnstyledLinkProps } from '../ui/links/UnstyledLink';
 
 type Props = Omit<UnstyledLinkProps, 'children' | 'href'> & {
   href?: string;

@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import * as React from 'react';
 
 import { UnstyledLink } from '.';
-import { UnstyledLinkProps } from './UnstyledLink';
+import { UnstyledLinkProps } from './links/UnstyledLink';
 
 interface DefaultProps {
   variant?: 'outline' | 'solid';

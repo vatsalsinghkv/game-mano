@@ -1,5 +1,6 @@
 import Button from './Buttons';
-import GradientText from './GradientText';
-import UnstyledLink from './UnstyledLink';
+import Icon from './Icon';
+import IconLink from './links/IconLink';
+import UnstyledLink from './links/UnstyledLink';
 
-export { GradientText, UnstyledLink, Button };
+export { UnstyledLink, Button, IconLink, Icon };
