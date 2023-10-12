@@ -8,7 +8,6 @@ import { UnstyledLinkProps } from './links/UnstyledLink';
 
 interface DefaultProps {
   variant?: 'outline' | 'solid' | 'mini' | 'light';
-  size?: 'sm' | 'lg';
   center?: boolean;
   fullWidth?: boolean;
 }
@@ -28,7 +27,6 @@ export type Props = ButtonProps | LinkProps;
 const Button = ({
   className = '',
   variant = 'mini',
-  size,
   fullWidth,
   children,
   ...props
@@ -67,6 +65,7 @@ const Button = ({
     );
   }
 
+  // don't pass unnecessary props to component
   const { as, ...rest } = props;
 
   return (
