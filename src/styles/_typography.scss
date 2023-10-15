@@ -1,0 +1,37 @@
+/* HEADINGS */
+.heading {
+  &-primary {
+    @apply text-center font-routhem text-3xl font-normal capitalize text-accent-primary md:text-4xl lg:text-6xl;
+    text-shadow:
+      8px 22px 4px rgba(0, 0, 0, 0.25),
+      0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    &--sub {
+      @apply font-bespak text-xl uppercase tracking-[3.36px] text-dark-invert;
+    }
+  }
+
+  &-secondary {
+    @apply font-bespak text-2xl font-normal capitalize not-italic text-dark-invert md:text-4xl;
+  }
+
+  &-tertiary {
+    @apply inline-block font-routhem text-2xl font-bold uppercase tracking-[2.5px] text-dark-invert;
+
+    &--gradient {
+      @apply inline-block bg-gradient-primary bg-clip-text font-routhem text-2xl font-bold uppercase tracking-[2.5px] text-transparent;
+    }
+  }
+}
+
+// TEXTS
+
+.text-gradient {
+  &-primary {
+    @apply inline-block bg-gradient-primary bg-clip-text font-bold text-transparent;
+  }
+
+  &-secondary {
+    @apply inline-block bg-gradient-secondary bg-clip-text font-bold text-transparent;
+  }
+}

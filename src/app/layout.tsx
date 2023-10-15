@@ -1,6 +1,6 @@
 import { Footer, Navbar } from '@/components/layouts';
 import Provider from '@/components/shared/Provider';
-import '@/styles/globals.css';
+import '@/styles/globals.scss';
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 
