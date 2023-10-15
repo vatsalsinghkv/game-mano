@@ -1,13 +1,17 @@
 /* COMPONENTS */
-.button-gradient {
-  @apply relative p-6 px-10 font-bespak text-lg uppercase hover:bg-gradient-primary hover:bg-clip-text hover:text-transparent;
-
-  &-light {
-    @apply relative bg-bg-secondary p-5 px-10 text-lg font-bold uppercase;
+.btn-gradient-outline {
+  &,
+  &--light {
+    @apply relative hover:after:translate-x-0;
   }
 
-  &::before,
-  &-light::before {
+  &:after {
+    content: '';
+    @apply absolute inset-0 -z-10 block -translate-x-full rounded-full bg-gradient-primary transition-transform duration-200;
+  }
+
+  &:before,
+  &--light:before {
     content: '';
     @apply absolute inset-0 rounded-full p-1;
     background: linear-gradient(90deg, var(--color-grad-primary));
@@ -18,4 +22,8 @@
     mask-composite: exclude;
     pointer-events: none;
   }
+}
+
+.btn-gradient-solid {
+  @apply relative bg-gradient-primary before:absolute before:inset-1 before:z-0 before:rounded-full before:bg-bg-secondary before:transition-all before:duration-200 hover:before:opacity-0;
 }

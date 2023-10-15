@@ -32,24 +32,30 @@ const Button = ({
   ...props
 }: Props) => {
   const classes = cn(
-    'capitalize rounded-full',
+    'capitalize rounded-full mx-auto block max-w-fit overflow-hidden',
     variant === 'mini' &&
       'bg-gradient-primary relative rounded-full p-[1px] h-7',
-    variant === 'outline' && 'button-gradient',
-    variant === 'light' && 'button-gradient-light',
+    variant === 'outline' &&
+      'p-6 px-10 font-bespak text-lg uppercase btn-gradient-outline',
+    variant === 'light' &&
+      'bg-bg-secondary p-5 px-10 text-lg font-bold uppercase btn-gradient-outline--light',
     variant === 'solid' &&
-      'bg-gradient-primary hover:bg-gradient-secondary h-16 md:h-20 flex items-center justify-center px-4 text-dark-base text-2xl font-bespak',
-    fullWidth && 'w-full',
+      'h-16 md:h-20 flex items-center justify-center px-4  text-2xl font-bespak group/solid btn-gradient-solid',
+    fullWidth && 'w-full max-w-full',
     className,
   );
 
   const child =
     variant === 'mini' ? (
       <span className='bg-bg-primary rounded-full h-full px-3 text-sm flex items-center justify-center'>
-        <span className='text-gradient-primary'>{children}</span>
+        <span className='text-gradient--primary'>{children}</span>
       </span>
     ) : variant === 'light' ? (
       <span className='text-gradient-primary'>{children}</span>
+    ) : variant === 'solid' ? (
+      <span className='text-gradient-primary group-hover/solid:text-dark-base transition-all relative z-20 duration-200'>
+        {children}
+      </span>
     ) : (
       <>{children}</>
     );
