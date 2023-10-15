@@ -1,5 +1,7 @@
 import { cn } from '@/lib/utils';
 
+import SplitText from '../ui/SplitText';
+
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   subtitle?: string;
@@ -26,7 +28,9 @@ const Hero = ({
       <div className='absolute inset-0 z-10 bg-dark-base opacity-60'></div>
 
       <div className='z-10 text-center max-w-3xl w-full space-y-5'>
-        <h1 className='heading-primary'>{title}</h1>
+        <h1 className='heading-primary text-reveal'>
+          <SplitText text={title} className='text-reveal__char' />
+        </h1>
         {subtitle && (
           <div className='relative flex items-center justify-center'>
             <div className='absolute bg-gradient-secondary left-0 w-[150px] h-2.5 hidden md:block rounded-full'></div>

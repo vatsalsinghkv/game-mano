@@ -35,3 +35,12 @@
     @apply inline-block bg-gradient-secondary bg-clip-text font-bold text-transparent;
   }
 }
+
+.text-reveal {
+  // animation: blink 2s 8s infinite alternate-reverse;
+
+  &__char {
+    opacity: 0;
+    animation: reveal 2s linear forwards;
+  }
+}

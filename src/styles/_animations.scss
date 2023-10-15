@@ -1,0 +1,24 @@
+@keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    border: 1px solid yellow;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
