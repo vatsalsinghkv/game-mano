@@ -32,15 +32,15 @@ const Button = ({
   ...props
 }: Props) => {
   const classes = cn(
-    'capitalize rounded-full mx-auto block max-w-fit overflow-hidden',
+    'capitalize rounded-full text-sm  md:text-lg mx-auto block max-w-fit overflow-hidden',
     variant === 'mini' &&
       'bg-gradient-primary relative rounded-full p-[1px] h-7',
     variant === 'outline' &&
-      'p-6 px-10 font-bespak text-lg uppercase btn-gradient-outline',
+      'p-4 md:p-6 px-7 md:px-10 font-bespak uppercase btn-gradient-outline',
     variant === 'light' &&
-      'bg-bg-secondary p-5 px-10 text-lg font-bold uppercase btn-gradient-outline--light',
+      'bg-bg-secondary p-5 px-10 font-bold uppercase btn-gradient-outline--light',
     variant === 'solid' &&
-      'h-16 md:h-20 flex items-center justify-center px-4  text-2xl font-bespak group/solid btn-gradient-solid',
+      'h-14 md:h-20 flex items-center justify-center px-4 text-lg md:text-2xl font-bespak group/solid btn-gradient-solid',
     fullWidth && 'w-full max-w-full',
     className,
   );
