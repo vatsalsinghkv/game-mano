@@ -1,6 +1,6 @@
 import { ProductType } from '@/lib/types/response';
 import { cn } from '@/lib/utils';
-import { Heart } from 'lucide-react';
+import { ArrowRightCircle, Heart } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 

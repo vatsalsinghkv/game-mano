@@ -39,6 +39,10 @@ const config: Config = {
         fluid: 'repeat(auto-fill, minmax(300px, 1fr))',
         'fluid-sm': 'repeat(auto-fill, minmax(250px, 1fr))',
       },
+      animation: {
+        'text-glow': 'glow 5s infinite linear',
+        'text-reveal': 'reveal 2s linear backwards',
+      },
     },
   },
   plugins: [],

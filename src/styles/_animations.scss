@@ -1,24 +1,28 @@
+@keyframes glow {
+  0% {
+    opacity: 1;
+    stroke: none;
+  }
+  50% {
+    opacity: 1;
+    -webkit-text-stroke: none;
+  }
+  51% {
+    opacity: 1;
+    -webkit-text-stroke: 2px yellow;
+  }
+  100% {
+    opacity: 0;
+    -webkit-text-stroke: 2px yellow;
+  }
+}
+
 @keyframes reveal {
   0% {
     opacity: 0;
   }
 
-  40% {
-    opacity: 1;
-  }
-
   100% {
     opacity: 1;
-  }
-}
-
-@keyframes blink {
-  0% {
-    border: 1px solid yellow;
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
   }
 }

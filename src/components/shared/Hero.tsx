@@ -1,20 +1,13 @@
 import { cn } from '@/lib/utils';
 
-import SplitText from '../ui/SplitText';
+import { AnimateText } from '../ui/texts';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   subtitle?: string;
 }
 
-const Hero = ({
-  className,
-  children,
-  title,
-  subtitle,
-
-  ...props
-}: Props) => {
+const Hero = ({ className, children, title, subtitle, ...props }: Props) => {
   return (
     <section
       id='#hero'
@@ -28,9 +21,8 @@ const Hero = ({
       <div className='absolute inset-0 z-10 bg-dark-base opacity-60'></div>
 
       <div className='z-10 text-center max-w-3xl w-full space-y-5'>
-        <h1 className='heading-primary text-reveal'>
-          <SplitText text={title} className='text-reveal__char' />
-        </h1>
+        <AnimateText text={title} />
+
         {subtitle && (
           <div className='relative flex items-center justify-center'>
             <div className='absolute bg-gradient-secondary left-0 w-[150px] h-2.5 hidden md:block rounded-full'></div>
