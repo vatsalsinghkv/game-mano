@@ -15,7 +15,7 @@
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "axios": "^1.5.1",
     "clsx": "^2.0.0",
-    "lucide-react": "^0.285.0",
+    "lucide-react": "^0.287.0",
     "next": "13.5.4",
     "next-nprogress-bar": "^2.1.2",
     "react": "^18",
